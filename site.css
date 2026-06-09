@@ -72,49 +72,48 @@ img { max-width: 100%; display: block; }
 /* ---- header -------------------------------------------------------------- */
 .kv-header {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(250, 247, 240, 0.92);
-  backdrop-filter: saturate(140%) blur(8px);
-  border-bottom: var(--border-hair) solid var(--color-border-subtle);
+  background: var(--kinva-ink-900);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 .kv-header-inner { display: flex; align-items: center; gap: 28px; height: 76px; }
 .kv-brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
 .kv-brand:hover { text-decoration: none; }
 .kv-brand img { width: 44px; height: 44px; border-radius: 50%; }
-.kv-brand-name { display: flex; flex-direction: column; line-height: 1.05; }
-.kv-brand-zh { font-family: var(--font-zh); font-weight: 900; font-size: 18px; color: var(--color-text-strong); letter-spacing: 0; }
-.kv-brand-en { font-family: var(--font-heading); font-weight: 800; font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-hover); }
+.kv-brand-name { display: flex; flex-direction: column; gap: 3px; line-height: 1.05; }
+.kv-brand-zh { font-family: var(--font-zh); font-weight: 900; font-size: 18px; color: #fff; letter-spacing: 0; }
+.kv-brand-en { font-family: var(--font-display); font-weight: 400; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--kinva-orange-500); }
 
 .kv-nav { display: flex; align-items: center; gap: 6px; margin-left: auto; }
 .kv-nav a {
   font-family: var(--font-zh); font-weight: 700; font-size: 16px;
-  color: var(--color-text-body); text-decoration: none;
+  color: var(--kinva-cream-100); text-decoration: none;
   padding: 8px 14px; border-radius: var(--radius-pill);
   position: relative; transition: color var(--dur-base) var(--ease-out);
 }
-.kv-nav a:hover { color: var(--color-brand); text-decoration: none; }
-.kv-nav a.is-active { color: var(--color-brand); }
+.kv-nav a:hover { color: #fff; text-decoration: none; }
+.kv-nav a.is-active { color: var(--kinva-orange-500); }
 .kv-nav a.is-active::after {
   content: ""; position: absolute; left: 14px; right: 14px; bottom: 1px;
-  height: 3px; background: var(--color-brand); border-radius: 2px;
+  height: 3px; background: var(--kinva-orange-500); border-radius: 2px;
 }
 .kv-header-actions { display: flex; align-items: center; gap: 14px; }
 
 /* language toggle */
 .kv-lang {
   display: inline-flex; align-items: center;
-  border: var(--border-2) solid var(--kinva-ink-900);
+  border: 2px solid rgba(255,255,255,0.25);
   border-radius: var(--radius-pill); overflow: hidden;
-  background: var(--color-surface-raised);
+  background: transparent;
 }
 .kv-lang button {
   font-family: var(--font-heading); font-weight: 800; font-size: 13px;
   border: none; background: transparent; cursor: pointer;
-  padding: 6px 13px; color: var(--color-text-body); line-height: 1;
+  padding: 6px 13px; color: var(--kinva-cream-100); line-height: 1;
 }
-.kv-lang button.is-on { background: var(--kinva-ink-900); color: #fff; }
+.kv-lang button.is-on { background: var(--kinva-orange-500); color: #fff; }
 
 /* mobile menu toggle */
-.kv-burger { display: none; border: var(--border-2) solid var(--kinva-ink-900); background: var(--color-surface-raised); border-radius: var(--radius-md); width: 44px; height: 44px; align-items: center; justify-content: center; cursor: pointer; color: var(--kinva-ink-900); }
+.kv-burger { display: none; border: 2px solid rgba(255,255,255,0.25); background: transparent; border-radius: var(--radius-md); width: 44px; height: 44px; align-items: center; justify-content: center; cursor: pointer; color: #fff; }
 
 /* ---- buttons-as-links (use DS Button look via anchors where needed) ------ */
 .kv-cta-row { display: flex; flex-wrap: wrap; gap: 14px; }
@@ -159,10 +158,14 @@ img { max-width: 100%; display: block; }
 .kv-chip-br { bottom: 30px; right: -20px; }
 
 /* ---- brand strip --------------------------------------------------------- */
-.kv-brandstrip { border-top: var(--border-hair) solid var(--color-border-subtle); border-bottom: var(--border-hair) solid var(--color-border-subtle); background: var(--kinva-cream-050); }
+.kv-brandstrip { border-top: var(--border-hair) solid var(--color-border-subtle); border-bottom: var(--border-hair) solid var(--color-border-subtle); background: #fff; }
 .kv-brandstrip-inner { display: flex; align-items: center; gap: 18px 44px; flex-wrap: wrap; padding: 28px 0; }
-.kv-brandstrip-label { font-family: var(--font-heading); font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; font-size: 12.5px; color: var(--color-text-muted); margin-right: 8px; }
+.kv-brandstrip-label { font-family: var(--font-heading); font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; font-size: 18px; color: var(--color-brand); margin-right: 8px; border: 2px solid var(--color-brand); border-radius: var(--radius-pill); padding: 6px 16px; white-space: nowrap; }
 .kv-brandstrip-name { font-family: var(--font-heading); font-weight: 800; font-size: 21px; color: var(--kinva-ink-400); letter-spacing: 0.01em; }
+
+/* brand logo slots */
+.kv-brandstrip-logos { display: flex; align-items: center; gap: 16px 40px; flex-wrap: wrap; flex: 1; }
+.kv-brand-logo-slot { width: 170px; height: 72px; border-radius: var(--radius-md); display: block; background: #fff; }
 
 /* ---- card grids ---------------------------------------------------------- */
 .kv-grid { display: grid; gap: 24px; }
@@ -302,7 +305,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* mobile menu (hidden by default, shown when toggled via JS) */
-.kv-mobile-menu { display: none; flex-direction: column; gap: 4px; padding: 12px 0 20px; border-top: var(--border-hair) solid var(--color-border-subtle); }
-.kv-mobile-menu a { font-family: var(--font-zh); font-weight: 700; font-size: 18px; color: var(--color-text-strong); text-decoration: none; padding: 12px 8px; border-radius: var(--radius-md); }
-.kv-mobile-menu a.is-active { color: var(--color-brand); }
-.kv-mobile-menu a:hover { background: var(--kinva-cream-100); text-decoration: none; }
+.kv-mobile-menu { display: none; flex-direction: column; gap: 4px; padding: 12px 0 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+.kv-mobile-menu a { font-family: var(--font-zh); font-weight: 700; font-size: 18px; color: var(--kinva-cream-100); text-decoration: none; padding: 12px 8px; border-radius: var(--radius-md); }
+.kv-mobile-menu a.is-active { color: var(--kinva-orange-500); }
+.kv-mobile-menu a:hover { background: rgba(255,255,255,0.06); text-decoration: none; }

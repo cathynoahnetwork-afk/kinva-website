@@ -17,11 +17,11 @@ function Hero({ t }) {
             <p className="kv-overline kv-eyebrow-row">{h.eyebrow}</p>
             <h1 className="kv-h1" style={{ marginTop: 22 }}>{t === KV.I18N.en
               ? <React.Fragment><span style={{ color: 'var(--color-brand)' }}>Low-barrier</span> wholesale, a more <span style={{ color: 'var(--kinva-orange-500)' }}>secure</span> start.</React.Fragment>
-              : <React.Fragment><span style={{ color: 'var(--color-brand)' }}>低门槛</span>批发，创业更有<span style={{ color: 'var(--kinva-orange-500)' }}>保障</span>。</React.Fragment>
+              : <React.Fragment><span style={{ color: 'var(--color-brand)' }}>低门槛</span>批发<br />创业更有<span style={{ color: 'var(--kinva-orange-500)' }}>保障</span>。</React.Fragment>
             }</h1>
             <p className="kv-lead" style={{ marginTop: 26, maxWidth: 560 }}>{t === KV.I18N.en
-              ? <React.Fragment>Kinva helps small shops, sundry stores and first-time entrepreneurs buy stationery in bulk at <strong className="kv-mark">high value</strong>. <strong className="kv-mark">Free shipping</strong> and a <strong className="kv-mark">buy-back guarantee</strong> let you start trading at <strong className="kv-mark">lower cost</strong> and <strong className="kv-mark">lower risk</strong>.</React.Fragment>
-              : <React.Fragment>庆华批发商为小本生意、杂货店与初创业者提供<strong className="kv-mark">高性价比</strong>的文具批量采购。<strong className="kv-mark">免费送货</strong>、卖不出<strong className="kv-mark">可退回</strong>，让你以更<strong className="kv-mark">低成本</strong>、更<strong className="kv-mark">低风险</strong>开始你的生意。</React.Fragment>
+              ? <React.Fragment>Kinva helps small shops, sundry stores and first-time entrepreneurs buy stationery in bulk at high value. Free shipping and a buy-back guarantee let you start trading at <strong className="kv-mark">lower cost</strong> and <strong className="kv-mark">lower risk</strong>.</React.Fragment>
+              : <React.Fragment>庆华批发商为小本生意、杂货店或初创业者提供性价比的文具采购。以<strong className="kv-mark">低成本</strong>、更<strong className="kv-mark">低风险</strong>开始你的生意！</React.Fragment>
             }</p>
             <div className="kv-cta-row" style={{ marginTop: 36 }}>
               <Button variant="primary" size="lg"
@@ -35,10 +35,15 @@ function Hero({ t }) {
                 {t.cta.viewServices}
               </Button>
             </div>
-            <div className="kv-trust-row">
-              <span className="kv-trust-item"><span className="kv-ic"><Icon name="truck" size={22} /></span>{t.common.free}</span>
-              <span className="kv-trust-item"><span className="kv-ic"><Icon name="rotate-ccw" size={22} /></span>{t.common.buyback}</span>
-              <span className="kv-trust-item"><span className="kv-ic"><Icon name="shield-check" size={22} /></span>{t.common.years}</span>
+            <div style={{ marginTop: 32, display: 'inline-flex', alignItems: 'center', gap: 14, background: 'var(--kinva-ink-900)', color: '#fff', borderRadius: 'var(--radius-pill)', padding: '14px 28px', boxShadow: '0 6px 20px rgba(0,0,0,0.18)' }}>
+              <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 38, height: 38, borderRadius: '50%', background: 'var(--kinva-orange-500)', flexShrink: 0 }}>
+                <Icon name="shield-check" size={22} color="#fff" />
+              </span>
+              <span style={{ fontFamily: 'var(--font-zh)', fontWeight: 800, fontSize: 21, letterSpacing: '0.02em' }}>
+                {t === KV.I18N.en
+                  ? <React.Fragment><span style={{ fontFamily: 'var(--font-display)', fontSize: 30, color: 'var(--kinva-orange-500)', marginRight: 4 }}>25+</span> years in business</React.Fragment>
+                  : <React.Fragment>超过 <span style={{ fontFamily: 'var(--font-display)', fontSize: 30, color: 'var(--kinva-orange-500)' }}>25</span> 年经营</React.Fragment>}
+              </span>
             </div>
           </div>
 
@@ -66,7 +71,12 @@ function BrandStrip({ t }) {
     <div className="kv-brandstrip">
       <div className="kv-container kv-brandstrip-inner">
         <span className="kv-brandstrip-label">{t.common.brandsLabel}</span>
-        {KV.CONFIG.brands.map((b) => <span key={b} className="kv-brandstrip-name">{b}</span>)}
+        <div className="kv-brandstrip-logos">
+          {KV.CONFIG.brands.map((b) => (
+            <image-slot key={b} id={"brand-logo-" + b.toLowerCase().replace(/[^a-z0-9]+/g, "-")}
+              class="kv-brand-logo-slot" shape="rect" fit="contain" placeholder={b}></image-slot>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -77,12 +87,20 @@ function WhyUs({ t }) {
   return (
     <section className="kv-section">
       <div className="kv-container">
-        <div className="kv-section-head" style={{ marginBottom: 52 }}>
-          <p className="kv-overline kv-eyebrow-row">{w.overline}</p>
-          <h2 className="kv-h2">{w.title}</h2>
+        <div className="kv-section-head" style={{ marginBottom: 56 }}>
+          <div style={{ display: 'flex', alignItems: 'flex-end', gap: 16, flexWrap: 'wrap' }}>
+            <span style={{ fontFamily: 'var(--font-zh)', fontWeight: 900, fontSize: 'clamp(52px, 5.5vw, 80px)', lineHeight: 0.88, color: 'var(--color-brand)', letterSpacing: '-0.01em' }}>
+              {t === KV.I18N.en ? "WHY" : "为什么"}
+            </span>
+            <span style={{ fontFamily: 'var(--font-zh)', fontWeight: 900, fontSize: 'clamp(38px, 4vw, 56px)', lineHeight: 0.95, color: 'var(--kinva-orange-500)' }}>
+              {t === KV.I18N.en ? "choose us?" : "选择我们？"}
+            </span>
+          </div>
+          <div style={{ width: 56, height: 5, background: 'var(--kinva-orange-500)', borderRadius: 3, marginTop: 18 }}></div>
+          <h2 className="kv-h2" style={{ marginTop: 16 }}>{w.title}</h2>
           <p className="kv-lead">{w.lead}</p>
         </div>
-        <div className="kv-grid kv-grid-4">
+        <div className="kv-grid kv-grid-3">
           {w.items.map((it, i) => (
             <Card key={i} variant="raised" padding="var(--space-6)" style={{ borderTop: i % 2 ? '4px solid var(--kinva-orange-500)' : '4px solid var(--color-brand)' }}>
               <div className="kv-feature">
@@ -103,9 +121,17 @@ function ServicesPreview({ t }) {
   return (
     <section className="kv-section" style={{ background: "var(--kinva-cream-050)", borderTop: "var(--border-hair) solid var(--color-border-subtle)", borderBottom: "var(--border-hair) solid var(--color-border-subtle)" }}>
       <div className="kv-container">
-        <div className="kv-section-head" style={{ marginBottom: 52 }}>
-          <p className="kv-overline kv-eyebrow-row">{s.overline}</p>
-          <h2 className="kv-h2">{s.title}</h2>
+        <div className="kv-section-head" style={{ marginBottom: 56 }}>
+          <div style={{ display: 'flex', alignItems: 'flex-end', gap: 16, flexWrap: 'wrap' }}>
+            <span style={{ fontFamily: 'var(--font-zh)', fontWeight: 900, fontSize: 'clamp(52px, 5.5vw, 80px)', lineHeight: 0.88, color: 'var(--kinva-orange-500)' }}>
+              {t === KV.I18N.en ? "Our" : "我们的"}
+            </span>
+            <span style={{ fontFamily: 'var(--font-zh)', fontWeight: 900, fontSize: 'clamp(52px, 5.5vw, 80px)', lineHeight: 0.88, color: 'var(--color-brand)' }}>
+              {t === KV.I18N.en ? "Services" : "服务"}
+            </span>
+          </div>
+          <div style={{ width: 56, height: 5, background: 'var(--color-brand)', borderRadius: 3, marginTop: 18 }}></div>
+          <h2 className="kv-h2" style={{ marginTop: 16 }}>{s.title}</h2>
           <p className="kv-lead">{s.lead}</p>
         </div>
         <div className="kv-grid kv-grid-4">
