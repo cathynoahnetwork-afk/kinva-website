@@ -1,0 +1,40 @@
+/* ==========================================================================
+   Kinva Wholesale — Spacing, radii, borders & layout
+   8px grid with 4px half-steps. Generous, breathable rhythm; sturdy,
+   friendly radii; chunky ink outlines for the retail "sticker" look.
+   ========================================================================== */
+
+:root {
+  /* ---- Spacing scale (index-based, 8px grid + 4px half) -------------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 80px;
+  --space-10: 96px;
+
+  /* ---- Radii — sturdy, friendly -------------------------------------- */
+  --radius-xs:   4px;
+  --radius-sm:   8px;
+  --radius-md:   12px;   /* inputs, small cards */
+  --radius-lg:   18px;   /* product cards, panels */
+  --radius-xl:   28px;   /* hero panels */
+  --radius-pill: 999px;  /* chips & CTAs */
+
+  /* ---- Border widths ------------------------------------------------- */
+  --border-hair: 1px;    /* subtle beige hairlines */
+  --border-1:    1px;
+  --border-2:    2px;    /* standard outlined controls */
+  --border-3:    3px;    /* chunky "sticker / cut-out" outline */
+
+  /* ---- Layout containers --------------------------------------------- */
+  --container-sm: 640px;
+  --container-md: 960px;
+  --container-lg: 1200px;
+  --container-xl: 1320px;
+  --header-h:     72px;
+}

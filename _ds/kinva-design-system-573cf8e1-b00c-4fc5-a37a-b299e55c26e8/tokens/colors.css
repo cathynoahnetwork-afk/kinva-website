@@ -1,0 +1,87 @@
+/* ==========================================================================
+   Kinva Wholesale — Color tokens
+   Brand: vivid red (trust + action), warm orange/amber (value + energy),
+   warm black (authority), cream/beige (approachable, friendly ground).
+   Base scales = --kinva-*  ·  Semantic aliases = --color-*
+   ========================================================================== */
+
+:root {
+  /* ---- Red — primary brand / action ---------------------------------- */
+  --kinva-red-050: #FDF1F0;
+  --kinva-red-100: #FBE3E2;
+  --kinva-red-400: #ED3A3F;   /* badge red */
+  --kinva-red-500: #DE262C;   /* brand primary ★ */
+  --kinva-red-600: #C01D24;   /* hover */
+  --kinva-red-700: #9E141B;   /* pressed / red text on cream */
+
+  /* ---- Orange & amber — energy accent -------------------------------- */
+  --kinva-orange-050: #FEF5EA;
+  --kinva-orange-100: #FDE9D2;
+  --kinva-orange-500: #F68122;  /* brand orange ★ */
+  --kinva-orange-600: #E06A12;  /* hover */
+  --kinva-amber-400:  #FAA435;  /* large warm fills */
+
+  /* ---- Cream / beige — the friendly ground --------------------------- */
+  --kinva-cream-050: #FDFBF6;   /* cards */
+  --kinva-cream-100: #FAF7F0;   /* default page ★ */
+  --kinva-cream-200: #F3ECDD;   /* sunken / subtle fills */
+  --kinva-cream-300: #E8DCC4;   /* beige hairline / divider */
+  --kinva-cream-400: #D8C7A6;   /* strong beige */
+
+  /* ---- Ink — warm black + neutral ramp ------------------------------- */
+  --kinva-ink-900: #16110F;   /* strongest text ★ */
+  --kinva-ink-800: #241D19;
+  --kinva-ink-700: #3A312B;
+  --kinva-ink-600: #524940;
+  --kinva-ink-500: #6B5F56;
+  --kinva-ink-400: #938578;
+  --kinva-ink-300: #B7AB9D;
+  --kinva-ink-200: #D8CFC4;
+  --kinva-ink-100: #ECE5DA;
+  --kinva-white:   #FFFFFF;
+
+  /* ---- Semantic feedback (retail stock states) ----------------------- */
+  --kinva-success-500: #2E8B57;   /* in stock */
+  --kinva-success-050: #E8F3EC;
+  --kinva-warning-500: #F6A609;   /* low stock */
+  --kinva-warning-050: #FEF3DE;
+  --kinva-danger-500:  #DE262C;   /* out / error (= brand red) */
+  --kinva-danger-050:  #FDF1F0;
+  --kinva-info-500:    #2563B0;   /* pen-blue */
+  --kinva-info-050:    #E7EFF8;
+
+  /* =====================================================================
+     Semantic aliases — reference THESE in components, not raw scales
+     ===================================================================== */
+
+  /* surfaces */
+  --color-bg-page:        var(--kinva-cream-100);
+  --color-surface-card:   var(--kinva-cream-050);
+  --color-surface-raised: var(--kinva-white);
+  --color-surface-sunken: var(--kinva-cream-200);
+  --color-surface-inverse:var(--kinva-ink-900);
+
+  /* text */
+  --color-text-strong:  var(--kinva-ink-900);
+  --color-text-body:    var(--kinva-ink-700);
+  --color-text-muted:   var(--kinva-ink-500);
+  --color-text-faint:   var(--kinva-ink-400);
+  --color-text-link:    var(--kinva-red-600);
+  --color-text-onbrand: var(--kinva-white);
+  --color-text-ondark:  var(--kinva-cream-100);
+
+  /* brand + accent */
+  --color-brand:        var(--kinva-red-500);
+  --color-brand-hover:  var(--kinva-red-600);
+  --color-brand-press:  var(--kinva-red-700);
+  --color-accent:       var(--kinva-orange-500);
+  --color-accent-hover: var(--kinva-orange-600);
+
+  /* borders */
+  --color-border-subtle: var(--kinva-cream-300);
+  --color-border-strong: var(--kinva-ink-300);
+  --color-border-ink:    var(--kinva-ink-900);
+
+  /* focus */
+  --color-focus-ring: var(--kinva-orange-500);
+}

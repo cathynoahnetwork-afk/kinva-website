@@ -1,0 +1,47 @@
+/* ==========================================================================
+   Kinva Wholesale — Typography tokens
+   Display: Anton (condensed impact, channels the KINVA wordmark).
+   Headings/UI: Archivo (sturdy, neutral-professional).
+   Body: Figtree (rounded-friendly, legible).  中文: Noto Sans SC.
+   Mono: JetBrains Mono (SKUs, codes, prices).
+   ========================================================================== */
+
+:root {
+  /* ---- Families ------------------------------------------------------ */
+  --font-display: 'Anton', 'Archivo', system-ui, sans-serif;
+  --font-heading: 'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body:    'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-zh:      'Noto Sans SC', 'Figtree', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* ---- Font sizes ---------------------------------------------------- */
+  --fs-overline: 0.75rem;    /* 12 — uppercase eyebrows */
+  --fs-body-sm:  0.875rem;   /* 14 — helper / secondary */
+  --fs-body:     1rem;       /* 16 — body default */
+  --fs-body-lg:  1.125rem;   /* 18 — lead paragraph */
+  --fs-h4:       1.25rem;    /* 20 */
+  --fs-h3:       1.5rem;     /* 24 */
+  --fs-h2:       2rem;       /* 32 */
+  --fs-h1:       2.75rem;    /* 44 */
+  --fs-display:  4rem;       /* 64 — hero Anton */
+
+  /* ---- Weights ------------------------------------------------------- */
+  --fw-regular:  400;  /* @kind font */
+  --fw-medium:   500;  /* @kind font */
+  --fw-semibold: 600;  /* @kind font */
+  --fw-bold:     700;  /* @kind font */
+  --fw-extra:    800;  /* @kind font */
+
+  /* ---- Line heights -------------------------------------------------- */
+  --lh-tight:   1.05;   /* @kind other */
+  --lh-snug:    1.2;    /* @kind other */
+  --lh-normal:  1.5;    /* @kind other */
+  --lh-relaxed: 1.65;   /* @kind other */
+
+  /* ---- Letter spacing ------------------------------------------------ */
+  --ls-tight:    -0.02em;  /* @kind other */
+  --ls-display:  -0.01em;  /* @kind other */
+  --ls-normal:   0;        /* @kind other */
+  --ls-wide:     0.04em;   /* @kind other */
+  --ls-overline: 0.16em;   /* @kind other */
+}
